@@ -352,10 +352,11 @@
             });
 
             if (filtered.length > 0) {
-                grid.innerHTML = filtered.map(createPropertyCardHTML).join('');
+                grid.innerHTML = filtered.map((p, idx) => createPropertyCardHTML(p, idx)).join('');
                 noResults.classList.add('hidden');
                 grid.classList.remove('hidden');
                 countText.textContent = `Showing ${filtered.length} verified ${filtered.length === 1 ? 'property' : 'properties'} in Jabalpur`;
+                setTimeout(initScrollReveal, 60);
             } else {
                 grid.innerHTML = '';
                 grid.classList.add('hidden');

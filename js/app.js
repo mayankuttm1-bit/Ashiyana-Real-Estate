@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
     initContactForms();
     initFAQ();
     initCounters();
+    initScrollReveal();
 });
 
 // Toast System
@@ -46,7 +47,8 @@ function initFeaturedProperties() {
 
     // Show top 4 featured listings
     const featured = ASHIYANA_PROPERTIES.slice(0, 4);
-    container.innerHTML = featured.map(createPropertyCardHTML).join('');
+    container.innerHTML = featured.map((p, idx) => createPropertyCardHTML(p, idx)).join('');
+    setTimeout(initScrollReveal, 60);
 }
 
 // Hero Search Form Logic
@@ -209,4 +211,30 @@ function initCounters() {
     }, { threshold: 0.5 });
 
     counters.forEach(counter => observer.observe(counter));
+}
+
+// Universal Scroll Reveal Observer
+function initScrollReveal() {
+    const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-zoom');
+    if (!revealElements.length) return;
+
+    // If user prefers reduced motion, reveal immediately
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        revealElements.forEach(el => el.classList.add('revealed'));
+        return;
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('revealed');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -40px 0px'
+    });
+
+    revealElements.forEach(el => observer.observe(el));
 }
