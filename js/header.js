@@ -9,15 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const backdrop = document.getElementById('drawer-backdrop');
     const navLinks = document.querySelectorAll('.drawer-nav a, .drawer-footer a');
     const header = document.querySelector('.site-header');
-    const contactBar = document.querySelector('.top-contact-bar');
-    const closeTopBar = document.querySelector('.top-bar-close');
 
-    // Top Contact Bar close
-    if (closeTopBar && contactBar) {
-        closeTopBar.addEventListener('click', function() {
-            contactBar.classList.add('hidden');
-        });
-    }
 
     if (!menuBtn || !drawer) return;
 
