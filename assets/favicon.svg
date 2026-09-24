@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="favGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E6CA65"/>
+      <stop offset="50%" stop-color="#C9A24B"/>
+      <stop offset="100%" stop-color="#A37B24"/>
+    </linearGradient>
+    <linearGradient id="favNavy" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#142B47"/>
+      <stop offset="100%" stop-color="#091424"/>
+    </linearGradient>
+  </defs>
+  <!-- Background Rounded Shield -->
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="url(#favNavy)" stroke="url(#favGold)" stroke-width="2.5"/>
+  <!-- Ashiyana Architectural Monogram: Modern 'A' with House Silhouette & Foundation Land Contours -->
+  <!-- Stylized Roof & Peak -->
+  <path d="M32 10 L50 28 L44 28 L32 16 L20 28 L14 28 Z" fill="url(#favGold)"/>
+  <!-- Central Tower / Pillar of A -->
+  <polygon points="32,20 40,36 34,36 32,30 30,30 28,36 22,36" fill="#FFFFFF"/>
+  <!-- Property Doctor Cross & Trust Accent -->
+  <path d="M29 38 H35 V42 H29 Z" fill="url(#favGold)"/>
+  <!-- Land Contours base -->
+  <path d="M12 48 C 22 43, 34 51, 52 46" stroke="url(#favGold)" stroke-width="3" stroke-linecap="round" fill="none"/>
+  <path d="M16 54 C 26 50, 38 56, 48 53" stroke="#25D366" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+</svg>

@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 100" width="520" height="100" fill="none">
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F3E293"/>
+      <stop offset="40%" stop-color="#C9A24B"/>
+      <stop offset="100%" stop-color="#9C7723"/>
+    </linearGradient>
+    <linearGradient id="navyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#142B47"/>
+      <stop offset="100%" stop-color="#0B192C"/>
+    </linearGradient>
+    <linearGradient id="emeraldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34D399"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+    <filter id="goldGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#C9A24B" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- Emblem Group -->
+  <g transform="translate(10, 8)">
+    <!-- Base Shield / Crest with Navy Glow -->
+    <rect x="0" y="0" width="84" height="84" rx="18" fill="url(#navyGrad)" stroke="url(#goldGrad)" stroke-width="2.5" filter="url(#goldGlow)"/>
+    
+    <!-- Architectural Roof Structure / A-Frame Crest -->
+    <path d="M42 12 L72 38 L63 38 L42 20 L21 38 L12 38 Z" fill="url(#goldGrad)"/>
+    
+    <!-- Inner Building Pillars / Stylized 'A' Center -->
+    <path d="M30 46 L42 24 L54 46 L47 46 L42 35 L37 46 Z" fill="#FFFFFF"/>
+    
+    <!-- Horizontal Crossbar (Property Doctor Trust Symbol) -->
+    <rect x="36" y="42" width="12" height="3" rx="1.5" fill="url(#goldGrad)"/>
+    
+    <!-- Foundation Curves / Land Development Topography -->
+    <path d="M16 63 C 28 56, 42 66, 68 59" stroke="url(#goldGrad)" stroke-width="3" stroke-linecap="round" fill="none"/>
+    <path d="M20 70 C 32 64, 46 73, 64 68" stroke="url(#emeraldGrad)" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+    
+    <!-- Golden Star Accent of Excellence (25+ Years) -->
+    <circle cx="42" cy="11" r="2.5" fill="#FFF"/>
+  </g>
+
+  <!-- Typography Group -->
+  <g transform="translate(108, 14)">
+    <!-- Primary Brand Wordmark: ASHIYANA -->
+    <text x="0" y="38" font-family="'Playfair Display', Georgia, serif" font-size="34" font-weight="800" letter-spacing="1.5" fill="#FFFFFF">
+      ASHIYANA
+    </text>
+    
+    <!-- Subtitle: REAL ESTATE & LAND DEVELOPERS -->
+    <text x="2" y="58" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="11" font-weight="700" letter-spacing="3.2" fill="url(#goldGrad)">
+      REAL ESTATE &amp; LAND DEVELOPERS
+    </text>
+
+    <!-- Trust Tagline Badge / Micro Detail -->
+    <g transform="translate(2, 68)">
+      <rect x="0" y="0" width="112" height="15" rx="3" fill="rgba(201, 162, 75, 0.15)" stroke="rgba(201, 162, 75, 0.4)" stroke-width="0.8"/>
+      <text x="6" y="11" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="8.5" font-weight="600" fill="#E6CA65" letter-spacing="0.8">PROPERTY DOCTOR</text>
+      
+      <circle cx="120" cy="8" r="2" fill="rgba(255,255,255,0.4)"/>
+      <text x="128" y="11" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="8.5" font-weight="600" fill="rgba(255,255,255,0.7)" letter-spacing="0.8">ESTD. 25+ YEARS • JABALPUR</text>
+    </g>
+  </g>
+</svg>
