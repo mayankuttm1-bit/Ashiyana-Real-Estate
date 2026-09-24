@@ -181,14 +181,15 @@ img {
 }
 
 .logo-img {
-  height: 52px;
+  height: 60px;
   width: auto;
   display: block;
+  transition: transform 0.2s ease;
 }
 
 @media (max-width: 640px) {
   .logo-img {
-    height: 44px;
+    height: 52px;
   }
 }
 
@@ -402,11 +403,19 @@ img {
   position: relative;
   background-color: var(--navy-dark);
   color: var(--white);
-  padding: 60px 4% 80px;
+  padding: 36px 4% 70px;
   overflow: hidden;
-  min-height: 85vh;
+  min-height: auto;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+}
+
+@media (max-width: 768px) {
+  .hero-wrapper {
+    padding-top: 24px;
+    padding-bottom: 50px;
+    display: block;
+  }
 }
 
 .hero-bg-overlay {
@@ -446,7 +455,7 @@ img {
   font-size: 0.82rem;
   font-weight: 600;
   color: var(--brass-light);
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 
 .badge-trust .dot {
