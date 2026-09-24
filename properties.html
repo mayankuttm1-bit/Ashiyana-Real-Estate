@@ -156,16 +156,6 @@
                     </button>
                 </div>
             </div>
-
-            <!-- Category Fast Tabs -->
-            <div class="flex items-center gap-2 mt-3 overflow-x-auto pb-1 text-xs">
-                <span class="text-gray-500 font-bold shrink-0">Quick Filter:</span>
-                <button class="fast-cat-btn active px-3 py-1 rounded-full bg-navy text-brass-light font-bold" data-cat="all">All (8)</button>
-                <button class="fast-cat-btn px-3 py-1 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium" data-cat="residential-plots">Residential Plots (Crystal Valley)</button>
-                <button class="fast-cat-btn px-3 py-1 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium" data-cat="builder-floors">Builder Floors &amp; Houses</button>
-                <button class="fast-cat-btn px-3 py-1 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium" data-cat="commercial">Commercial</button>
-                <button class="fast-cat-btn px-3 py-1 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium" data-cat="agricultural">Agricultural &amp; Bandhavgarh</button>
-            </div>
         </div>
     </div>
 
@@ -315,19 +305,11 @@
         const catSelect = document.getElementById('prop-category-select');
         const locSelect = document.getElementById('prop-location-select');
         const resetBtn = document.getElementById('prop-filter-reset');
-        const fastCatBtns = document.querySelectorAll('.fast-cat-btn');
 
         // Parse URL params for initial filters
         const params = new URLSearchParams(window.location.search);
-        if (params.has('type')) {
-            const t = params.get('type');
-            if (catSelect) catSelect.value = t;
-            fastCatBtns.forEach(btn => {
-                if (btn.getAttribute('data-cat') === t) {
-                    fastCatBtns.forEach(b => b.className = 'fast-cat-btn px-3 py-1 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium');
-                    btn.className = 'fast-cat-btn active px-3 py-1 rounded-full bg-navy text-brass-light font-bold';
-                }
-            });
+        if (params.has('type') && catSelect) {
+            catSelect.value = params.get('type');
         }
         if (params.has('location') && locSelect) {
             locSelect.value = params.get('location');
@@ -367,41 +349,13 @@
 
         // Event listeners
         searchInput?.addEventListener('input', filterAndRender);
-        catSelect?.addEventListener('change', () => {
-            const val = catSelect.value;
-            fastCatBtns.forEach(b => {
-                if (b.getAttribute('data-cat') === val) {
-                    b.className = 'fast-cat-btn active px-3 py-1 rounded-full bg-navy text-brass-light font-bold';
-                } else {
-                    b.className = 'fast-cat-btn px-3 py-1 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium';
-                }
-            });
-            filterAndRender();
-        });
-
+        catSelect?.addEventListener('change', filterAndRender);
         locSelect?.addEventListener('change', filterAndRender);
-
-        fastCatBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                fastCatBtns.forEach(b => b.className = 'fast-cat-btn px-3 py-1 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium');
-                btn.className = 'fast-cat-btn active px-3 py-1 rounded-full bg-navy text-brass-light font-bold';
-                const cat = btn.getAttribute('data-cat');
-                if (catSelect) catSelect.value = cat;
-                filterAndRender();
-            });
-        });
 
         resetBtn?.addEventListener('click', () => {
             if (searchInput) searchInput.value = '';
             if (catSelect) catSelect.value = 'all';
             if (locSelect) locSelect.value = 'all';
-            fastCatBtns.forEach(b => {
-                if (b.getAttribute('data-cat') === 'all') {
-                    b.className = 'fast-cat-btn active px-3 py-1 rounded-full bg-navy text-brass-light font-bold';
-                } else {
-                    b.className = 'fast-cat-btn px-3 py-1 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium';
-                }
-            });
             filterAndRender();
         });
 

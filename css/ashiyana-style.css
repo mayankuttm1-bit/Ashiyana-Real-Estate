@@ -495,30 +495,10 @@ img {
   border: 1px solid rgba(201, 162, 75, 0.3);
 }
 
-.search-tab-bar {
-  display: flex;
-  gap: 10px;
+.search-header-bar {
   margin-bottom: 18px;
   border-bottom: 1px solid #E5E7EB;
   padding-bottom: 12px;
-}
-
-.search-tab {
-  background: transparent;
-  border: none;
-  font-family: var(--font-body);
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--ink-muted);
-  padding: 6px 14px;
-  cursor: pointer;
-  border-radius: 6px;
-  transition: var(--transition);
-}
-
-.search-tab.active {
-  background: var(--navy);
-  color: var(--brass-light);
 }
 
 .search-form-grid {
