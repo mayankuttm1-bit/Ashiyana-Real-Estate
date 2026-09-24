@@ -1,21 +1,44 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 64" width="360" height="64" fill="none">
-  <!-- Minimalist Luxury Emblem -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 64" width="380" height="64" fill="none">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap');
+      .brand-title {
+        font-family: 'Playfair Display', Georgia, serif;
+        font-size: 26px;
+        font-weight: 800;
+        letter-spacing: 2px;
+        fill: #FFFFFF;
+      }
+      .brand-sub {
+        font-family: 'Plus Jakarta Sans', Arial, sans-serif;
+        font-size: 9px;
+        font-weight: 700;
+        letter-spacing: 2.5px;
+        fill: #C9A24B;
+      }
+    </style>
+    <linearGradient id="goldLinear" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E5C365"/>
+      <stop offset="50%" stop-color="#C9A24B"/>
+      <stop offset="100%" stop-color="#A37B24"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Minimalist Emblem: Modern Monogram with Roofline & Foundation -->
   <g transform="translate(6, 6)">
-    <!-- Sleek Navy & Gold Shield -->
-    <rect x="0" y="0" width="52" height="52" rx="12" fill="#0B192C" stroke="#C9A24B" stroke-width="2"/>
-    <!-- Modern Geometric House & 'A' Roofline -->
-    <path d="M26 11 L42 27 L37 27 L26 16 L15 27 L10 27 Z" fill="#C9A24B"/>
-    <path d="M20 39 L26 22 L32 39 L28 39 L26 32 L24 39 Z" fill="#FFFFFF"/>
-    <circle cx="26" cy="28" r="1.5" fill="#C9A24B"/>
+    <!-- Badge Base -->
+    <rect x="0" y="0" width="52" height="52" rx="10" fill="#0B192C" stroke="url(#goldLinear)" stroke-width="2"/>
+    <!-- Clean Roof Silhouette -->
+    <path d="M26 11 L43 27 L37 27 L26 16.5 L15 27 L9 27 Z" fill="url(#goldLinear)"/>
+    <!-- Stylized 'A' Center Pillar -->
+    <path d="M19 40 L26 22 L33 40 L28.5 40 L26 33 L23.5 40 Z" fill="#FFFFFF"/>
+    <!-- Minimal Accent Dot -->
+    <circle cx="26" cy="28.5" r="1.5" fill="url(#goldLinear)"/>
   </g>
 
-  <!-- Clean Minimalist Typography -->
-  <g transform="translate(70, 10)">
-    <text x="0" y="28" font-family="'Playfair Display', Georgia, serif" font-size="27" font-weight="700" letter-spacing="2" fill="#FFFFFF">
-      ASHIYANA
-    </text>
-    <text x="1" y="44" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="8.8" font-weight="600" letter-spacing="2.6" fill="#C9A24B">
-      REAL ESTATE &amp; LAND DEVELOPERS
-    </text>
+  <!-- Clean Brand Name & Subtitle -->
+  <g transform="translate(72, 8)">
+    <text x="0" y="27" class="brand-title">ASHIYANA</text>
+    <text x="1" y="43" class="brand-sub">REAL ESTATE &amp; LAND DEVELOPERS</text>
   </g>
 </svg>
